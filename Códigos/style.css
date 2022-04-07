@@ -1,0 +1,80 @@
+*
+{
+	margin: 0; padding: 0;
+	font-family: sans-serif;
+	box-sizing: border-box;
+}
+
+body
+{
+	width: 100%;
+	min-height: 100vh;
+	background: #00ebff;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 280px);
+	gap: 30px;
+	padding: 20px;
+	justify-content: center;
+}
+
+#add,
+.note
+{
+	height: 280px;
+	background: #fff;
+	border-radius: 10px;
+}
+#add, 
+#add .circle
+{
+	display: grid;
+	place-items: center;
+	cursor: pointer;
+	transition: background .5s;
+}
+#add:hover
+{
+	background: #f2f2f2;
+}
+#add .circle
+{
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	font-size: 5em;
+	border: 3px dashed #aaa;
+	color: #aaa;
+}
+
+.note
+{
+	position: relative;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.note h3
+{
+	margin-bottom: 20px;
+}
+.note .text
+{
+	text-align: justify;
+	line-height: 1.3;
+	height: 100px;
+	overflow-x: hidden;
+}
+.note:hover .text
+{
+	overflow-x: hidden
+}
+.note .footer
+{
+	border-top: 1px solid #aaa;
+	/*padding: 15px 10px;*/
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	color: #aaa;
+}
