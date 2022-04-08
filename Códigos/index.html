@@ -9,32 +9,27 @@
 
 </head>
 <body>
-	
-	<div class="note">
-		<div class="header">
-			<h3>Título da notação</h3>
-			<div class="text">
-					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorce, ipsum.
-					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorce, ipsum.
-					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorce, ipsum.
-					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorce, ipsum.
-					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorce, ipsum.
-					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorce, ipsum.
-					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorce, ipsum.		
-			</div>
-		</div>
-
-		<div class="footer">
-			<div class="date">Day, hora</div>
-			<div class="excluir">...</div>
-		</div>
-	</div>
-	<div class="note"></div>
-	<div class="note"></div>
-	<div class="note"></div>
 
 	<div id="add">
 		<div class="circle"><i class='bx bx-plus-medical'></i></div>
+	</div>
+
+	<div class="form-popup">
+		<div class="header-popup">
+			<h3>Nova Notação</h3>
+			<i class='bx bx-x'></i>
+		</div>
+		<div class="form">
+			<div class="row form-title">
+				<label for="">Titulo</label>
+				<input type="text" id="title-input" placeholder="Título...">
+			</div>
+			<div class="row form-note">
+				<label for="">Notação</label>
+				<textarea id="note-input" placeholder="Notação..."></textarea>
+			</div>
+			<button id="button-add">Enviar</button>
+		</div>
 	</div>
 
 <script src="script.js"></script>

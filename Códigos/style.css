@@ -2,6 +2,7 @@
 {
 	margin: 0; padding: 0;
 	font-family: sans-serif;
+	outline: none;
 	box-sizing: border-box;
 }
 
@@ -11,10 +12,20 @@ body
 	min-height: 100vh;
 	background: #00ebff;
 	display: grid;
-	grid-template-columns: repeat(auto-fill, 280px);
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 	gap: 30px;
 	padding: 20px;
 	justify-content: center;
+}
+
+
+/* Display Flex */
+.note .footer-note, 
+.header-popup
+{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 #add,
@@ -41,7 +52,7 @@ body
 	width: 150px;
 	height: 150px;
 	border-radius: 50%;
-	font-size: 5em;
+	font-size: 3em;
 	border: 3px dashed #aaa;
 	color: #aaa;
 }
@@ -53,28 +64,117 @@ body
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	overflow-x: hidden;
 }
-.note h3
+.note h3,
+.note p
 {
 	margin-bottom: 20px;
 }
-.note .text
+.note p
 {
 	text-align: justify;
 	line-height: 1.3;
-	height: 100px;
-	overflow-x: hidden;
 }
-.note:hover .text
-{
-	overflow-x: hidden
-}
-.note .footer
+.note .footer-note
 {
 	border-top: 1px solid #aaa;
-	/*padding: 15px 10px;*/
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+	padding: 20px 10px 0 10px;
 	color: #aaa;
+}
+
+.edite-note
+{
+	position: relative;
+
+}
+.edite-note .bx
+{
+	font-size: 1.5rem;
+}
+.edite-note .option-edite
+{
+	position: absolute;
+	bottom: 0; right: 0;
+	background: #f2f2f2;
+	padding: 8px;
+	border-radius: 5px;
+	transform: scale(0);
+	transform-origin: bottom right;
+	transition: transform .3s ease;
+}
+.edite-note:hover .option-edite
+{
+	transform: scale(1);
+}
+.edite-note .option-edite button
+{
+	width: 100%;
+	padding: 3px 8px;
+	background: transparent;
+	border: none;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+.edite-note .option-edite button:hover
+{
+	background: #ddd;
+}
+
+/* Popup Style */
+.form-popup
+{
+	position: fixed;
+	left: 50%; top: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	background: #fff;
+	width: 400px;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 0 50px rgba(0, 0, 0, .1);
+	transition: transform .3s ease-in-out;
+}
+.form-popup.open
+{
+	transform: translate(-50%, -50%) scale(1);
+}
+.form-popup .bx
+{
+	font-size: 2em;
+	cursor: pointer;
+}
+.form-popup .form
+{
+	margin-top: 15px;
+	border-top: 1px solid #aaa;
+}
+.form-popup .form .row
+{
+	display: flex;
+	flex-direction: column;
+	margin-top: 20px;
+}
+.form-popup .form .row input,
+.form-popup .form .row textarea
+{
+	border-radius: 5px;
+	margin-top: 5px;
+	padding: 8px;
+	border: 1px solid #ddd;
+}
+.form-popup .form .row textarea
+{
+	resize: none;
+	height: 200px;
+	margin-bottom: 20px;
+}
+.form-popup .form button
+{
+	width: 100%;
+	padding: 10px 0;
+	background: #00ebff;
+	color: #fff;
+	border: none;
+	font-size: 1.3em;
+	cursor: pointer;
 }
