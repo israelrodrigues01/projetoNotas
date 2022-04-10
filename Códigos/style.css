@@ -10,7 +10,7 @@ body
 {
 	width: 100%;
 	min-height: 100vh;
-	background: #00ebff;
+	background: #45a;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 	gap: 30px;
@@ -28,35 +28,34 @@ body
 	justify-content: space-between;
 }
 
-#add,
+#add
+{
+	position: fixed;
+	bottom: 20px; right: 20px;
+	background: #fff;
+	width: 60px; height: 60px;
+	border-radius: 10px;
+	z-index: 1000;
+	font-size: 2em;
+	color: #101;
+	display: grid;
+	place-items: center;
+	cursor: pointer;
+	box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+	transition: background .5s;
+}
+#add:hover
+{
+	background: #ddd;
+}
+
 .note
 {
 	height: 280px;
 	background: #fff;
 	border-radius: 10px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, .2);
 }
-#add, 
-#add .circle
-{
-	display: grid;
-	place-items: center;
-	cursor: pointer;
-	transition: background .5s;
-}
-#add:hover
-{
-	background: #f2f2f2;
-}
-#add .circle
-{
-	width: 150px;
-	height: 150px;
-	border-radius: 50%;
-	font-size: 3em;
-	border: 3px dashed #aaa;
-	color: #aaa;
-}
-
 .note
 {
 	position: relative;
