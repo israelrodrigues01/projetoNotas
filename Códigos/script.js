@@ -35,7 +35,6 @@ function abrirPopup()
 // Criar notação HTML
 function tagNote()
 {
-
 	document.querySelectorAll('.note').forEach(note => note.remove());
 	notes.forEach((note, id) =>
 	{
