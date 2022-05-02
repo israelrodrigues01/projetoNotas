@@ -10,10 +10,11 @@ body
 {
 	width: 100%;
 	min-height: 100vh;
-	background: #45a;
+	background: #113;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 	gap: 30px;
+	grid-row-gap: 20px;
 	padding: 20px;
 }
 
@@ -28,46 +29,49 @@ body
 }
 
 /* Display Grid - Centralizar */
-#add,
+#add-box,
 .popup
 {
 	display: grid;
 	place-items: center;
 }
 
-#add
+#add-box
 {
 	position: fixed;
 	bottom: 20px; right: 20px;
 	background: #fff;
-	width: 60px; height: 60px;
-	border-radius: 10px;
+	width: 50px; height: 50px;
+	border-radius: 2px;
 	z-index: 1000;
 	font-size: 2em;
-	color: #101;
+	color: #113;
 	cursor: pointer;
 	box-shadow: 0 0 20px rgba(0, 0, 0, .6);
 	transition: background .5s;
 }
-#add:hover
+#add-box:hover
 {
 	background: #ddd;
 }
-
-.note
+#add-box i.open
 {
-	height: 280px;
-	background: #fff;
-	border-radius: 10px;
-	box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+	transform: rotate(45deg);
 }
+
+
 .note
 {
 	position: relative;
 	padding: 20px;
+	max-height: 300px;
+	margin-bottom: 20px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	background: #fff;
+	border-radius: 10px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, .2);
 	overflow-x: hidden;
 }
 .note h3,
@@ -136,7 +140,7 @@ body
 	transform: scale(0);
 	transform-origin: bottom right;
 	transition: transform .45s ease-in-out;
-	z-index: 1;
+	z-index: 1000;
 }
 .popup.open
 {
@@ -150,7 +154,6 @@ body
 	padding: 20px;
 	border-radius: 10px;
 	box-shadow: 0 0 50px rgba(0, 0, 0, .1);
-	z-index: 22;
 }
 .form-popup .bx
 {
@@ -160,30 +163,30 @@ body
 .form-popup .form
 {
 	margin-top: 15px;
+	padding-top: 15px;
 	border-top: 1px solid #aaa;
 }
-.form-popup .form .row
+
+.form-popup .form .row input
 {
-	display: flex;
-	flex-direction: column;
-	margin-top: 20px;
+	font-weight: bold;
+}
+.form-popup .form .row textarea
+{
+	height: 200px;
 }
 .form-popup .form .row input,
 .form-popup .form .row textarea
 {
-	border-radius: 5px;
-	margin-top: 5px;
+	width: 100%;
+	font-size: 1.2rem;
+	border: none;
 	padding: 8px;
-	border: 1px solid #ddd;
-}
-.form-popup .form .row textarea
-{
+	margin: 0 0 10px 0;
 	resize: none;
-	height: 200px;
-	margin-bottom: 20px;
 }
 .form-popup .form button
-{
+{	
 	width: 100%;
 	padding: 10px 0;
 	background: #45a;
@@ -192,4 +195,17 @@ body
 	font-size: 1.3em;
 	border-radius: 5px;
 	cursor: pointer;
+}
+
+@media (max-width: 436px)
+{
+	.form-popup
+	{
+		width: 100%;
+		height: 100%;
+	}
+	.form-popup .form .row textarea
+	{
+		height: 65vh;
+	}
 }
